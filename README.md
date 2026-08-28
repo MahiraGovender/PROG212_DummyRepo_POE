@@ -46,7 +46,7 @@ The GitHub Actions workflow validates the required repository structure and chec
 
 ### CI/CD Workflow Screenshot
 
-![GitHub Actions CI/CD Workflow](docs/CI_CD_Screenshot.png)
+<img width="1910" height="1060" alt="CI_Pipeline_PNG" src="https://github.com/user-attachments/assets/ba7e2416-a7d7-418b-9916-6bc94c91d956" />
 
 ## Project Documentation
 
