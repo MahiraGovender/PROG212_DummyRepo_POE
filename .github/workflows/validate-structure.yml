@@ -12,36 +12,36 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Check required folders
+      - name: Check docs folder
         run: |
           test -d docs || {
-            echo "ERROR: /docs folder is missing."
+            echo "ERROR: docs folder is missing."
             exit 1
           }
 
       - name: Check required files
         run: |
-          test -f docs/endpoint-plan.md || {
-            echo "ERROR: docs/endpoint-plan.md is missing."
+          test -f "docs/API_Endpoint_Plan.md" || {
+            echo "ERROR: API_Endpoint_Plan.md is missing."
             exit 1
           }
 
-          test -f docs/erd.png || {
-            echo "ERROR: docs/erd.png is missing."
+          test -f "docs/PROG_2B - ERD.png" || {
+            echo "ERROR: PROG_2B - ERD.png is missing."
             exit 1
           }
 
-          test -f docs/RaceDay_DB.sql || {
-            echo "ERROR: docs/RaceDay_DB.sql is missing."
+          test -f "docs/RaceDay_DB_SQLScript.sql" || {
+            echo "ERROR: RaceDay_DB_SQLScript.sql is missing."
             exit 1
           }
 
-          test -f README.md || {
+          test -f "README.md" || {
             echo "ERROR: README.md is missing."
             exit 1
           }
 
-      - name: Validate repository structure
+      - name: Structure validation successful
         run: |
           echo "Repository structure is valid."
-          echo "Required files and folders are present."
+          echo "All required files are present."
