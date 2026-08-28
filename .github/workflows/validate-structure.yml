@@ -1,0 +1,47 @@
+name: Validate Repository Structure
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate-structure:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check required folders
+        run: |
+          test -d docs || {
+            echo "ERROR: /docs folder is missing."
+            exit 1
+          }
+
+      - name: Check required files
+        run: |
+          test -f docs/endpoint-plan.md || {
+            echo "ERROR: docs/endpoint-plan.md is missing."
+            exit 1
+          }
+
+          test -f docs/erd.png || {
+            echo "ERROR: docs/erd.png is missing."
+            exit 1
+          }
+
+          test -f docs/RaceDay_DB.sql || {
+            echo "ERROR: docs/RaceDay_DB.sql is missing."
+            exit 1
+          }
+
+          test -f README.md || {
+            echo "ERROR: README.md is missing."
+            exit 1
+          }
+
+      - name: Validate repository structure
+        run: |
+          echo "Repository structure is valid."
+          echo "Required files and folders are present."
